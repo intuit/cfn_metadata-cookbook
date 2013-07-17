@@ -5,6 +5,4 @@ cfn = CfnMetadataLoader.new(node['cfn_metadata']['stack_name'],
                             node['cfn_metadata']['secret_key'],
                             node['cfn_metadata']['cfn_path'])
 
-cfn_data = cfn.sanitized_metadata
-
-node.set['cfn_metadata']['data'] = cfn_data
+node.set['cfn_metadata']['data'] = cfn.sanitized_metadata

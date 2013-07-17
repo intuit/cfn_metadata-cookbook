@@ -2,7 +2,7 @@ class Chef::Recipe::CfnMetadataLoader
 
   IGNORED_METADATA_KEYS = [ 'AWS::CloudFormation::Init',
                             'AWS::CloudFormation::Authentication' ]
-  def initialize(stack_name, region, resource_name, access_key, secret_key, cfn_path="/opt/aws/bin/cfn-get-metadata")
+  def initialize(stack_name, region, resource_name, access_key, secret_key, cfn_path)
     @stack_name = stack_name
     @region = region
     @resource_name = resource_name
