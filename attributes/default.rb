@@ -1,11 +1,6 @@
-default['cfn_metadata']['dir']                   = '/etc/intu_metadata.d'
-default['cfn_metadata']['stack_name']['key']     = 'NAME'
-default['cfn_metadata']['stack_name']['file']    = 'stack'
-default['cfn_metadata']['region']['key']         = 'REGION'
-default['cfn_metadata']['region']['file']        = 'stack'
-default['cfn_metadata']['resource_name']['key']  = 'RESOURCE_NAME'
-default['cfn_metadata']['resource_name']['file'] = 'stack'
-default['cfn_metadata']['access_key']['key']     = 'ACCESS_KEY'
-default['cfn_metadata']['access_key']['file']    = 'instance_user'
-default['cfn_metadata']['secret_key']['key']     = 'SECRET_KEY'
-default['cfn_metadata']['secret_key']['file']    = 'instance_user'
+default['cfn_metadata']['stack_name']    = ""
+default['cfn_metadata']['region']        = ""
+default['cfn_metadata']['resource_name'] = ""
+default['cfn_metadata']['access_key']    = ""
+default['cfn_metadata']['secret_key']    = ""
+default['cfn_metadata']['cfn_path']      = ""

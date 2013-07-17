@@ -48,4 +48,3 @@ class Chef::Recipe::CfnMetadataLoader
   end
 
 end
-
