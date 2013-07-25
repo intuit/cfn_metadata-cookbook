@@ -9,6 +9,7 @@ Add to runlist
 
 # Attributes
 * default
+
 `node['cfn_metadata']['stack_name']`    - name of cloud formation stack to query
 
 `node['cfn_metadata']['region']`        - region stack is located
