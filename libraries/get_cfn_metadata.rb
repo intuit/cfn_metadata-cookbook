@@ -21,7 +21,7 @@ class CfnMetadataLoader
 
   def raw_cfn_metadata
     output = `#{cfn_metadata_command}`
-    raise RuntimeError 'Unable to get cloud formation metadata' unless $?.success?
+    raise 'Unable to get cloud formation metadata' unless $?.success?
     JSON.parse output
   end
  
