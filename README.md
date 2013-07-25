@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/intuit/cfn_metadata-cookbook.png)](http://travis-ci.org/intuit/ec2_metadata-cookbook)
+
 # cfn_metadata cookbook
 Calls the AWS cfn-get-metadata command to retrieve the Cloud Formation metadata which is returned in native format but strips out the Authentication and Init section.
 
