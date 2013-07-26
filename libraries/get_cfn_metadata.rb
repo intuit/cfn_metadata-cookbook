@@ -27,8 +27,8 @@ class CfnMetadataLoader
 
     unless @process_status.success?
       raise 'Unable to get cloud formation metadata'
-      JSON.parse output
     end
+    JSON.parse output
   end
 
   def cfn_metadata_command
