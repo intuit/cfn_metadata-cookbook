@@ -9,7 +9,6 @@ class CfnMetadataLoader
     @access_key = access_key
     @secret_key = secret_key
     @cfn_path = cfn_path
-    @process_status = $?
   end
 
   def sanitized_metadata
@@ -25,7 +24,7 @@ class CfnMetadataLoader
   def raw_cfn_metadata
     output = `#{cfn_metadata_command}`
 
-    unless @process_status.success?
+    unless process_status.success?
       raise 'Unable to get cloud formation metadata'
     end
     JSON.parse output
@@ -38,6 +37,11 @@ class CfnMetadataLoader
     cmd << "--region #{@region} "
     cmd << "--access-key #{@access_key} "
     cmd << "--secret-key #{@secret_key}"
+  end
+
+  private
+  def process_status
+    @process_status || $?
   end
 
 end
