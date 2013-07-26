@@ -1,5 +1,7 @@
 class CfnMetadataLoader
 
+  attr_writer :process_status
+
   def initialize(stack_name, region, resource_name, access_key, secret_key, cfn_path)
     @stack_name = stack_name
     @region = region
@@ -7,6 +9,7 @@ class CfnMetadataLoader
     @access_key = access_key
     @secret_key = secret_key
     @cfn_path = cfn_path
+    @process_status = $?
   end
 
   def sanitized_metadata
@@ -21,10 +24,13 @@ class CfnMetadataLoader
 
   def raw_cfn_metadata
     output = `#{cfn_metadata_command}`
-    raise 'Unable to get cloud formation metadata' unless $?.success?
-    JSON.parse output
+
+    unless @process_status.success?
+      raise 'Unable to get cloud formation metadata'
+      JSON.parse output
+    end
   end
- 
+
   def cfn_metadata_command
     cmd = "#{@cfn_path} "
     cmd << "-s #{@stack_name} "
