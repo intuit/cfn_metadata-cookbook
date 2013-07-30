@@ -27,6 +27,7 @@ Add to runlist
 # Recipes
 * default
 
+`node['cfn_metadata']['data']` - The sanitized Cloud Formation Metadata will be added to this attribute. Sanitizing will remove the sections  `AWS::CloudFormation::Init` and `AWS::CloudFormation::Authentication`
 # Author
 
 Author:: Intuit, Inc. (<kevin_young@intuit.com>)
