@@ -1,18 +1,8 @@
-#
-# Cookbook Name:: cfn_metadata-cookbook
-# Recipe:: default
-#
-# Copyright (C) 2013 Intuit, Inc.
-# 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-# 
-#    http://www.apache.org/licenses/LICENSE-2.0
-# 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+cfn = CfnMetadataLoader.new node['cfn_metadata']['stack_name'],
+                            node['cfn_metadata']['region'],
+                            node['cfn_metadata']['resource_name'],
+                            node['cfn_metadata']['access_key'],
+                            node['cfn_metadata']['secret_key'],
+                            node['cfn_metadata']['cfn_get_metadata_bin']
+
+node.set['cfn_metadata']['data'] = cfn.sanitized_metadata
