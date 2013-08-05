@@ -39,7 +39,6 @@ class CfnMetadataLoader
     cmd << "--secret-key #{@secret_key}"
   end
 
-  private
   def process_status
     @process_status || $?
   end
