@@ -15,8 +15,7 @@ end
 
 desc 'Run specs'
 RSpec::Core::RakeTask.new do |t|
-  t.pattern = "cookbooks/*/spec{,/*/**}/*_spec.rb"
-  t.rspec_opts = %w(--color --format documentation)
+  t.rspec_opts = %w(--color)
 end
 
 task :default => [:foodcritic, :spec]
