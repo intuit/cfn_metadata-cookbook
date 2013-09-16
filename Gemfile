@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'emeril', '~> 0.6.0'
+gem 'emeril', '~> 0.7.0'
 gem 'foodcritic', '~> 2.2.0'
 gem 'rake'
 
