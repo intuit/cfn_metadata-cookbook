@@ -17,7 +17,3 @@ RSpec::Core::RakeTask.new do |t|
 end
 
 task :default => [:foodcritic, :spec]
-
-
-
-
