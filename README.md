@@ -12,15 +12,17 @@ Add to runlist
 # Attributes
 * default
 
+`node['cfn_metadata']['use_iam_profile']`    - pull credentials from IAM profile (EC2 Role). False by default.
+
 `node['cfn_metadata']['stack_name']`    - name of cloud formation stack to query
 
 `node['cfn_metadata']['region']`        - region stack is located
 
-`node['cfn_metadata']['resource_name']` - cloud formation resource to query 
+`node['cfn_metadata']['resource_name']` - cloud formation resource to query
 
 `node['cfn_metadata']['access_key']`    - access key for authentication
 
-`node['cfn_metadata']['secret_key']`   - secret key for authentication 
+`node['cfn_metadata']['secret_key']`   - secret key for authentication
 
 `node['cfn_metadata']['cfn_get_metadata_bin']`  - path to binary, default "/opt/aws/bin/cfn-get-metadata"
 
