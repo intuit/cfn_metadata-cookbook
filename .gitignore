@@ -8,3 +8,4 @@ Berksfile.lock
 *.un~
 /cookbooks
 .bundle/
+Gemfile.lock

@@ -1,14 +1,15 @@
 class CfnMetadataLoader
 
-  attr_writer :process_status
+  attr_writer :process_status, :use_iam_profile
 
   def initialize(stack_name, region, resource_name, access_key, secret_key, cfn_path)
-    @stack_name = stack_name
-    @region = region
-    @resource_name = resource_name
-    @access_key = access_key
-    @secret_key = secret_key
-    @cfn_path = cfn_path
+    @stack_name      = stack_name
+    @region          = region
+    @resource_name   = resource_name
+    @access_key      = access_key
+    @secret_key      = secret_key
+    @cfn_path        = cfn_path
+    @use_iam_profile = false
   end
 
   def sanitized_metadata
@@ -35,6 +36,10 @@ class CfnMetadataLoader
     cmd << "-s #{@stack_name} "
     cmd << "-r #{@resource_name} "
     cmd << "--region #{@region} "
+    @use_iam_profile ? cmd : add_aws_credentials(cmd)
+  end
+
+  def add_aws_credentials(cmd)
     cmd << "--access-key #{@access_key} "
     cmd << "--secret-key #{@secret_key}"
   end
