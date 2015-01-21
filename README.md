@@ -1,5 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/intuit/cfn_metadata-cookbook.png)](http://travis-ci.org/intuit/ec2_metadata-cookbook)
 
+**!!! This project has been deprecated.  We recommend you search the [Chef Supermarket ](https://supermarket.chef.io/) for a supported alternative !!!**
+
 # cfn_metadata cookbook
 Calls the AWS cfn-get-metadata command to retrieve the Cloud Formation metadata which is returned in native format but strips out the Authentication and Init section.
 
